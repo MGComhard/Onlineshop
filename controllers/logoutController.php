@@ -1,6 +1,4 @@
-
 <?php
-session_start();
 
 // Alle Session-Variablen löschen
 $_SESSION = array();
@@ -16,5 +14,5 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // Weiterleitung
-header("Location: login.php");
+header("Location: index.php?page=login");
 exit;

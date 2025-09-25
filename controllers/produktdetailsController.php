@@ -1,6 +1,7 @@
 <?php
-session_start();
+require_once "includes/authentifizierung.php";
 
+// Produktdaten (optional auslagern in includes/produktdaten.php)
 $produkte = [
     ['id' => 1, 'name' => 'Apfel', 'price' => 0.99, 'description' => "Frische Äpfel vom Land."],
     ['id' => 2, 'name' => 'Banane', 'price' => 0.79, 'description' => "Süße Bananen aus Mittelamerika."],
@@ -23,24 +24,4 @@ foreach ($produkte as $p) {
 }
 
 $pageTitle = $produkt ? $produkt['name'] : "Produkt nicht gefunden";
-include "includes/header.php";
-?>
-
-<?php if ($produkt): ?>
-    <h1><?php echo htmlspecialchars($produkt['name']); ?></h1>
-    <p><strong>Preis:</strong> <?php echo htmlspecialchars($produkt['price']); ?> €</p>
-    <p><strong>Beschreibung:</strong> <?php echo htmlspecialchars($produkt['description']); ?></p>
-
-    <form method="POST" action="produkte.php">
-        <input type="hidden" name="product_id" value="<?php echo $produkt['id']; ?>">
-        <label>Menge:
-            <input type="number" name="quantity" value="1" min="1" style="width:50px;">
-        </label>
-        <button type="submit" name="add_to_cart">In den Warenkorb</button>
-    </form>
-<?php else: ?>
-    <p>Produkt nicht gefunden.</p>
-<?php endif; ?>
-
-<p><a href="produkte.php">Zurück zur Produktliste</a></p>
-<?php include "includes/footer.php"; ?>
+include "templates/produktdetails.php";
