@@ -1,14 +1,14 @@
 <?php
 require_once "includes/authentifizierung.php";
 
-$produkte = [
-    ['id' => 1, 'name' => 'Apfel', 'price' => 0.99, 'description' => "Frische Äpfel vom Land."],
-    ['id' => 2, 'name' => 'Banane', 'price' => 0.79, 'description' => "Süße Bananen aus Mittelamerika."],
-    ['id' => 3, 'name' => 'Orange', 'price' => 1.29, 'description' => "Orangen aus Andalusien"],
-    ['id' => 4, 'name' => 'Weintrauben (1kg)', 'price' => 2.99, 'description' => "Knackige grüne Weintrauben aus dem Moselgebiet"],
-    ['id' => 5, 'name' => 'Pflaume', 'price' => 0.89, 'description' => "Heimische frische Pflaumen"],
-    ['id' => 6, 'name' => 'Birne', 'price' => 0.59, 'description' => "Aromatische Birne"],
-];
+$jsonPfad = __DIR__ . '/../includes/produktdaten.JSON';
+$jsonInhalt = file_get_contents($jsonPfad);
+$produkte = json_decode($jsonInhalt, true);
+
+if ($produkte === null) {
+    echo "<p>Produktdaten konnten nicht geladen werden. Bitte versuchen Sie es später erneut.</p>";
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
     $product_id = $_POST['product_id'];
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
                 ];
             }
 
-            echo "<p>{$produkt['name']} wurde dem Warenkorb hinzugefügt ({$quantity} Stück).</p>";
+            echo "<p>" . htmlspecialchars($produkt['name']) . " wurde dem Warenkorb hinzugefügt ({$quantity} Stück).</p>";
             break;
         }
     }
