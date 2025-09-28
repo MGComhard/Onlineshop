@@ -1,8 +1,8 @@
 [
-  { "id": 1, "name": "Apfel", "price": 0.99, "description": "Frische Äpfel vom Land." },
-  { "id": 2, "name": "Banane", "price": 0.79, "description": "Süße Bananen aus Mittelamerika." },
-  { "id": 3, "name": "Orange", "price": 1.29, "description": "Orangen aus Andalusien" },
-  { "id": 4, "name": "Weintrauben (1kg)", "price": 2.99, "description": "Knackige grüne Weintrauben aus dem Moselgebiet" },
-  { "id": 5, "name": "Pflaume", "price": 0.89, "description": "Heimische frische Pflaumen" },
-  { "id": 6, "name": "Birne", "price": 0.59, "description": "Aromatische Birne" }
+  { "id": 1, "name": "Apfel", "price": 0.99, "description": "Frische Äpfel vom Land.", "image": "images/apfel.jpg" },
+  { "id": 2, "name": "Banane", "price": 0.79, "description": "Süße Bananen aus Mittelamerika.", "image": "images/banane.jpg" },
+  { "id": 3, "name": "Orange", "price": 1.29, "description": "Orangen aus Andalusien.", "image": "images/orange.jpg" },
+  { "id": 4, "name": "Weintrauben (1kg)", "price": 2.99, "description": "Knackige grüne Weintrauben aus dem Moselgebiet", "image": "images/weintraube.jpg" },
+  { "id": 5, "name": "Pflaume", "price": 0.89, "description": "Heimische frische Pflaumen", "image": "images/pflaume.jpg" },
+  { "id": 6, "name": "Birne", "price": 0.59, "description": "Aromatische Birne", "image": "images/birne.jpg" }
 ]
