@@ -1,5 +1,6 @@
 <?php
 require_once "includes/authentifizierung.php";
+require_once "includes/produktViewHelper.php";
 
 $jsonPfad = __DIR__ . '/../includes/produktdaten.JSON';
 $jsonInhalt = file_get_contents($jsonPfad);

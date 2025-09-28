@@ -1,17 +1,7 @@
 <?php include "templates/header.php"; ?>
 
 <?php if ($produkt): ?>
-    <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px;">
-        <?php if (!empty($produkt['image'])): ?>
-            <img src="<?= htmlspecialchars($produkt['image']) ?>" alt="<?= htmlspecialchars($produkt['name']) ?>" style="height:200px;">
-        <?php endif; ?>
-
-        <div>
-            <h1><?= htmlspecialchars($produkt['name']) ?></h1>
-            <p><strong>Preis:</strong> <?= htmlspecialchars($produkt['price']) ?> €</p>
-            <p><strong>Beschreibung:</strong> <?= htmlspecialchars($produkt['description']) ?></p>
-        </div>
-    </div>
+    <?= getProductView($produkt, true, true, true) ?>
 
     <form method="POST" action="index.php?page=produkte">
         <input type="hidden" name="product_id" value="<?= $produkt['id'] ?>">

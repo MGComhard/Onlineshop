@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div class="wrapper">
     <?php if (isset($_SESSION['logged_in'])): ?>
         <div style="text-align:right; padding:10px;">
             Eingeloggt als <strong>admin</strong> | <a href="index.php?page=logout">Logout</a>
@@ -22,4 +23,4 @@
             <li><a href="index.php?page=kontakt">Kontakt</a></li>
         </ul>
     </nav>
-    <hr>
+    <main>
